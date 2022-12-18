@@ -19,6 +19,9 @@ import {
     SearchClear,
     SearchBtn,
     MenuIcon,
+    MenuModal,
+    BtnClose,
+    MobileMenu,
 } from './Header.style';
 import logoLage from './../../assets/images/logo-lg.png';
 import logoSmall from './../../assets/images/logo-sm.png';
@@ -27,6 +30,7 @@ import { Badge } from '@mui/material';
 const Header = () => {
     const [searchValue, setSearchValue] = useState("");
     const searchRef = useRef();
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
     return (
         <HeaderContainer>
             <TopHeader>
@@ -64,16 +68,33 @@ const Header = () => {
                             <AccountCircleOutlined sx={{ fontSize: 25 }} />
                         </Account>
                         <Cart>
-                            <Badge color="error" badgeContent={1} max={9}>
-                                <ShoppingBagOutlined sx={{ fontSize: 25 }} />
-                            </Badge>
+                            {!showMobileMenu &&
+                                <Badge color="error" badgeContent={1} max={9}>
+                                    <ShoppingBagOutlined sx={{ fontSize: 25 }} />
+                                </Badge>
+                            }
+
                         </Cart>
-                        <MenuIcon>
+                        <MenuIcon onClick={e => (setShowMobileMenu(!showMobileMenu))}>
                             <Menu sx={{ fontSize: 25 }} />
                         </MenuIcon>
                     </MenuAction>
                 </MainNavBar>
             </MainHeader>
+            {showMobileMenu &&
+                <MenuModal>
+                    <MobileMenu>
+                        <BtnClose onClick={e => (setShowMobileMenu(!showMobileMenu))}>
+                            <Clear sx={{ fontSize: 25 }} />
+                        </BtnClose>
+                        <MenuItem>Nam</MenuItem>
+                        <MenuItem>Nữ</MenuItem>
+                        <MenuItem>Adidas</MenuItem>
+                        <MenuItem>Nike</MenuItem>
+                    </MobileMenu>
+                </MenuModal>
+            }
+
         </HeaderContainer>
     )
 }

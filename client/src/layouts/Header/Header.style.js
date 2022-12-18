@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { InputText } from '../../assets/styles/globalStyle';
-import { devices } from '../../assets/styles/variables';
+import { devices, colors } from '../../assets/styles/variables';
 export const HeaderContainer = styled.div`
     width: 100vw;
     height: 104px;
@@ -168,6 +168,37 @@ export const MenuIcon = styled.div`
 export const MenuModal = styled.div`
     display: none;
     position: fixed;
-    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: ${colors.modal};
+    transition: opacity .25s,visibility 0s linear .25s;
+    @media ${devices.mobileM} {
+        display: block;
+    }
+`;
+
+export const MobileMenu = styled.div`
+    right: 0;
+    width: 50vw;
     height: 100vh;
+    background-color: ${colors.white};
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+`;
+
+export const BtnClose = styled.div`
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin: 5px 8px 5px;
+    align-self: flex-end;
+    border-radius: 50%;
+    &:hover {
+        background-color: ${colors.gray};
+    }
 `;
