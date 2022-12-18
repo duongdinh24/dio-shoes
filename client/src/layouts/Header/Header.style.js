@@ -164,3 +164,7 @@ export const MenuIcon = styled.div`
         display: block;
     }
 `;
+
+export const MenuModal = styled.div`
+
+`;
