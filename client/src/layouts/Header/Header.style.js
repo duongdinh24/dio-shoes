@@ -166,5 +166,8 @@ export const MenuIcon = styled.div`
 `;
 
 export const MenuModal = styled.div`
-
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
 `;
