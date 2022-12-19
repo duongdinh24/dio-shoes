@@ -47,7 +47,7 @@ const index = () => {
             </FooterMain>
             <FooterPolicy>
                 <Copyright> Copyright © by Dio Shoes</Copyright>
-                <Copyright>Power by duongdinh24.com</Copyright>
+                <Copyright>Powered by duongdinh24.com</Copyright>
             </FooterPolicy>
         </FooterContainer>
     )

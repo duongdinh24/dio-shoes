@@ -37,19 +37,23 @@ export const FooterLeft = styled.div`
 `;
 
 export const FooterCenter = styled.div`
-    margin-top: 30px;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media ${devices.mobileM} {
+        margin-top: 30px;
+    }
 `;
 
 export const FooterRight = styled.div`
-    margin-top: 30px;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media ${devices.mobileM} {
+        margin-top: 30px;
+    }
 `;
 
 export const FooterHead = styled.h3`
