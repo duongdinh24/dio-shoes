@@ -34,7 +34,6 @@ code {
 }
 
 .content {
-  min-height: 65vh;
-  background-color: blueviolet;
+  min-height: 63vh;
   width: 1200px;
 }
