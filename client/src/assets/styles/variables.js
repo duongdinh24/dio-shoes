@@ -34,7 +34,7 @@ export const colors = {
     warning: "#e6a23c",
     danger: "#f56c6c",
     light: "#f6f6f7",
-    dark: "#0000",
+    dark: "#0b1a33",
     lightgray: "#F5F5F5",
     modal: "rgba(0,0,0,.5)"
 }
