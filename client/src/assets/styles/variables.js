@@ -36,4 +36,5 @@ export const colors = {
     light: "#f6f6f7",
     dark: "#0000",
     lightgray: "#F5F5F5",
+    modal: "rgba(0,0,0,.5)"
 }
