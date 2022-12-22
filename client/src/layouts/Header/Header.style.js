@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { InputText } from '../../assets/styles/globalStyle';
+import { InputText } from '../../assets/styles/global.style';
 import { devices, colors } from '../../assets/styles/variables';
 export const HeaderContainer = styled.div`
     width: 100vw;

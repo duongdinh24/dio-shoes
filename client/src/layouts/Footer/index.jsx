@@ -15,7 +15,7 @@ import {
 } from './Footer.style';
 import { Facebook, Instagram, YouTube, Twitter } from '@mui/icons-material';
 
-const index = () => {
+const Footer = () => {
     return (
         <FooterContainer>
             <FooterMain>
@@ -46,11 +46,11 @@ const index = () => {
                 </FooterRight>
             </FooterMain>
             <FooterPolicy>
-                <Copyright> Copyright © by Dio Shoes</Copyright>
+                <Copyright> Copyright © by Dio Shoes 2023</Copyright>
                 <Copyright>Powered by duongdinh24.com</Copyright>
             </FooterPolicy>
         </FooterContainer>
     )
 }
 
-export default index;
+export default Footer;

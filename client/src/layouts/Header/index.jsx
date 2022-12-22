@@ -27,6 +27,7 @@ import logoLage from './../../assets/images/logo-lg.png';
 import logoSmall from './../../assets/images/logo-sm.png';
 import { Search, ShoppingBagOutlined, AccountCircleOutlined, Clear, Menu } from '@mui/icons-material';
 import { Badge } from '@mui/material';
+import ScrollButton from '../../components/ScrollButton';
 const Header = () => {
     const [searchValue, setSearchValue] = useState("");
     const searchRef = useRef();
@@ -94,7 +95,7 @@ const Header = () => {
                     </MobileMenu>
                 </MenuModal>
             }
-
+            <ScrollButton />
         </HeaderContainer>
     )
 }

@@ -18,7 +18,7 @@ export const colors = {
     indigo: "#6610f2",
     purple: "#613d7c",
     pink: "#ff5b77",
-    red: "#f56c6c",
+    red: "#e32020",
     orange: "#f25f43",
     yellow: "#e6a23c",
     green: "#67c23a",
@@ -35,6 +35,7 @@ export const colors = {
     danger: "#f56c6c",
     light: "#f6f6f7",
     dark: "#0b1a33",
+    black: "#0000",
     lightgray: "#F5F5F5",
     modal: "rgba(0,0,0,.5)"
 }
