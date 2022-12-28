@@ -1,0 +1,1 @@
+const PRODUCT_DETAIL_LINK = "/product"

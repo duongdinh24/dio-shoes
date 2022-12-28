@@ -11,6 +11,10 @@ export const Container = styled.div`
     position: relative;
 
     @media ${devices.tabletL} {
+       height: 60vh;
+    }
+
+    @media ${devices.tabletM} {
        height: 50vh;
     }
 
@@ -65,7 +69,7 @@ export const Slide = styled.div`
 
 export const ImgContainer = styled.div`
     width: 100%;
-    height: 75%;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,7 +86,7 @@ export const ImgContainer = styled.div`
 export const Image = styled.img`
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
 `;
 
 export const InforContainer = styled.div`
@@ -121,10 +125,18 @@ export const DotContainer = styled.div`
     align-items: center;
     justify-content: center;
     position: absolute;
-    bottom: 130px;
-
+    bottom: 160px;
+    @media ${devices.tabletL} {
+       bottom: 190px;
+    }
+    @media ${devices.tabletM} {
+       bottom: 130px;
+    }
     @media ${devices.mobileM} {
-       bottom: 170px;
+       bottom: 180px;
+    }
+    @media ${devices.mobileS} {
+       bottom: 160px;
     }
 `
 export const Dot = styled.span`
@@ -136,6 +148,9 @@ export const Dot = styled.span`
     display: inline-block;
     margin: 0 10px;
     z-index: 1;
+    &:hover {
+        opacity: 0.5;
+    }
     @media ${devices.mobileM} {
         height: 10px;
         width: 10px;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Button } from '../../assets/styles/global.style';
-import { colors } from '../../assets/styles/variables';
+import { colors, devices } from '../../assets/styles/variables';
 export const Container = styled(Button)`
     width: 50px;
     height: 50px;
@@ -8,8 +8,14 @@ export const Container = styled(Button)`
     position: fixed;
     bottom: 300px;
     right: 50px;
-    background-color: ${colors.light};
+    background-color: ${colors.teal};
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 5;
+    @media ${devices.mobileM} {
+        width: 30px;
+        height: 30px;
+        right: 20px;
+    }
 `
