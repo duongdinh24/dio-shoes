@@ -4,3 +4,8 @@ import { Container } from '../../assets/styles/global.style'
 export const HomeContainer = styled(Container)`
     
 `;
+
+export const NewProduct = styled.div`
+    width: 100%;
+    max-width: 1200px;
+`;

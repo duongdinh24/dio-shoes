@@ -16,36 +16,7 @@ import {
 	Dot,
 } from './SlideShow.style';
 
-const slides = [
-	{
-		title: "Top giày chạy bộ nike ",
-		desc: "Khám phá nhanh các mẫu giày chạy bộ được ưa chuộng nhất tới từ Nike",
-		img: "http://localhost:3000/assets/imgs/slide1.jpg",
-		link: "http://localhost:3000/assets/imgs/slide1.jpg",
-	},
-
-	{
-		title: "Top giày chạy bộ Adidas ",
-		desc: "Những sản phẩm giày chạy adidas được yêu thích nhất",
-		img: "http://localhost:3000/assets/imgs/slide2.jpg",
-		link: "http://localhost:3000/assets/imgs/slide2.jpg",
-
-	},
-	{
-		title: "Sản phẩm mới nhất từ Nike ",
-		desc: "Sản phẩm mới nhất từ Nike đã có mặt tại shop",
-		img: "http://localhost:3000/assets/imgs/slide3.jpg",
-		link: "http://localhost:3000/assets/imgs/slide3.jpg",
-
-	},
-	{
-		title: "Sale up to 50%",
-		desc: "Gấu chưa có gió đông đã về, đừng lo có Dio shoes supper sale",
-		img: "http://localhost:3000/assets/imgs/slide4.jpg",
-		link: "http://localhost:3000/assets/imgs/slide4.jpg",
-	}
-]
-
+import { slides } from '../../data';
 
 const SlideShow = () => {
 	const [slideIndex, setSlideIndex] = useState(0);
@@ -63,17 +34,14 @@ const SlideShow = () => {
 		setSlideIndex(index);
 	}
 
+	// Auto change slide
 	// useEffect(() => {
-
 	// 	const autoSlide = setTimeout(() => {
 	// 		console.log("Change slide")
 	// 		setSlideIndex((slideIndex < slideLength - 1 ? slideIndex + 1 : 0))
 	// 	}, 3000);
-
 	// 	//eslint-disable-next-line	
 	// }, [slideIndex]);
-
-
 
 	return (
 		<Container>
