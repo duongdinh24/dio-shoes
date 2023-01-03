@@ -56,69 +56,70 @@ export const slides = [
 // ]
 // Product.createIndexes({ "specs.k": 1, "specs.v": 1 });
 
-// product detail
-export const product = {
-    name: 'Ultraboost Bayonce',
-    slug: 'ultraboost-bayounce',
-    brand: 'Adidas',
-    description: 'Siêu phẩm giày thể thao Ultraboost tới từ châu âu',
-    categories: ['men', 'running'],
-    images: [
-        "http://localhost:3000/assets/imgs/slide1.jpg",
-        "http://localhost:3000/assets/imgs/slide2.jpg",
-        "http://localhost:3000/assets/imgs/slide3.jpg",
-        "http://localhost:3000/assets/imgs/slide4.jpg",
-    ],
-    options: [
-        {
-            color: 'red',
-            sizes: [
-                {
-                    _id: 'dfjafdifjif',
-                    size: 30,
-                    stock: 10,
-                    price: 100000,
-                    sale: 50,
-                },
-                {
-                    _id: 'dfjafdifsdff',
-                    size: 35,
-                    stock: 10,
-                    price: 100000,
-                    sale: 50,
-                }
-            ]
-        },
-        {
-            color: 'blue',
-            sizes: [
-                {
-                    _id: 'sfiaiweuuf',
-                    size: 30,
-                    stock: 10,
-                    price: 100000,
-                    sale: 50,
-                },
-                {
-                    _id: 'adfeef',
-                    size: 35,
-                    stock: 10,
-                    price: 100000,
-                    sale: 50,
-                }
-            ]
-        },
-    ],
+// product unuse
+// export const product = {
+//     name: 'Ultraboost Bayonce',
+//     slug: 'ultraboost-bayounce',
+//     brand: 'Adidas',
+//     description: 'Siêu phẩm giày thể thao Ultraboost tới từ châu âu',
+//     categories: ['men', 'running'],
+//     images: [
+//         "http://localhost:3000/assets/imgs/slide1.jpg",
+//         "http://localhost:3000/assets/imgs/slide2.jpg",
+//         "http://localhost:3000/assets/imgs/slide3.jpg",
+//         "http://localhost:3000/assets/imgs/slide4.jpg",
+//     ],
+//     options: [
+//         {
+//             color: 'red',
+//             sizes: [
+//                 {
+//                     _id: 'dfjafdifjif',
+//                     size: 30,
+//                     stock: 10,
+//                     price: 100000,
+//                     sale: 50,
+//                 },
+//                 {
+//                     _id: 'dfjafdifsdff',
+//                     size: 35,
+//                     stock: 10,
+//                     price: 100000,
+//                     sale: 50,
+//                 }
+//             ]
+//         },
+//         {
+//             color: 'blue',
+//             sizes: [
+//                 {
+//                     _id: 'sfiaiweuuf',
+//                     size: 30,
+//                     stock: 10,
+//                     price: 100000,
+//                     sale: 50,
+//                 },
+//                 {
+//                     _id: 'adfeef',
+//                     size: 35,
+//                     stock: 10,
+//                     price: 100000,
+//                     sale: 50,
+//                 }
+//             ]
+//         },
+//     ],
 
-}
+// }
 
 export const productList = [
     {
-        id: 'sjfISWIJFASIFJOAeiu',
+        _id: 'sjfISWIJFASIFJOAeiu',
         name: 'Adidas Ultraboost',
         slug: 'adidas-ultraboost',
         brand: 'Adidas',
-        categories: ['men', 'running'],
+        gender: 'men',
+        categories: ['running'],
         colors: 2,
         thumbnail: 'http://localhost:3000/assets/imgs/slide1.jpg',
         price: 1200000,
@@ -126,33 +127,36 @@ export const productList = [
 
     },
     {
-        id: 'sjfISWeegetiSIFf',
+        _id: 'sjfISWeegetiSIFf',
         name: 'Nike R109',
         slug: 'nike-r109',
         brand: 'Nike',
-        categories: ['men', 'running'],
+        gender: 'women',
+        categories: ['running'],
         colors: 1,
         thumbnail: 'http://localhost:3000/assets/imgs/slide2.jpg',
         price: 1000000,
         sale: 25,
     },
     {
-        id: 'sjfISWIJFASIgseu',
+        _id: 'sjfItetweweseu',
         name: 'Nike Air 97',
         slug: 'nike-air-97',
         brand: 'Nike',
-        categories: ['men', 'running'],
+        gender: 'women',
+        categories: ['running'],
         colors: 2,
         thumbnail: 'http://localhost:3000/assets/imgs/slide3.jpg',
         price: 3000000,
         sale: 0,
     },
     {
-        id: 'sjfISWIJFASIFJOAeiu',
+        _id: 'sjfISWufiejnJOAeiu',
         name: 'Adidas Ultraboost',
         slug: 'adidas-ultraboost',
         brand: 'Adidas',
-        categories: ['men', 'running'],
+        gender: 'women',
+        categories: ['running'],
         colors: 2,
         thumbnail: 'http://localhost:3000/assets/imgs/slide1.jpg',
         price: 1200000,
@@ -160,22 +164,24 @@ export const productList = [
 
     },
     {
-        id: 'sjfISWeegetiSIFf',
+        _id: 'sjfuenckutiSIFf',
         name: 'Nike R109',
         slug: 'nike-r109',
         brand: 'Nike',
-        categories: ['men', 'running'],
+        gender: 'men',
+        categories: ['running'],
         colors: 1,
         thumbnail: 'http://localhost:3000/assets/imgs/slide2.jpg',
         price: 1000000,
         sale: 25,
     },
     {
-        id: 'sjfISWIJFASIgseu',
+        _id: 'sjfISWmeunwiwseu',
         name: 'Nike Air 97',
         slug: 'nike-air-97',
         brand: 'Nike',
-        categories: ['men', 'running'],
+        gender: 'women',
+        categories: ['running'],
         colors: 2,
         thumbnail: 'http://localhost:3000/assets/imgs/slide3.jpg',
         price: 3000000,
@@ -184,21 +190,21 @@ export const productList = [
 ]
 
 // product on database
-export const products = [
-    {
-        id: 'afaeueruadfafuawe8fh',
-        code: 'ADIDAS-001',
-        name: 'Ultraboost Bayonce',
-        brand: 'Adidas',
-        description: 'Siêu phẩm giày thể thao Ultraboost tới từ châu âu',
-        sale: 50,
-        price: 100000,
-        categories: ['men', 'running'],
-        size: 10,
-        color: 'red',
-        stock: 10,
-    },
-]
+// export const products = [
+//     {
+//         id: 'afaeueruadfafuawe8fh',
+//         code: 'ADIDAS-001',
+//         name: 'Ultraboost Bayonce',
+//         brand: 'Adidas',
+//         description: 'Siêu phẩm giày thể thao Ultraboost tới từ châu âu',
+//         sale: 50,
+//         price: 100000,
+//         categories: ['men', 'running'],
+//         size: 10,
+//         color: 'red',
+//         stock: 10,
+//     },
+// ]
 
 
 ///     detail   list   database 
@@ -208,19 +214,33 @@ const database = {
     _id: "asdasdasdasdasdasd",
     name: 'Ultraboost Bayonce',
     slug: 'ultraboost-bayounce',
-    brand: 'Adidas',
+    brand: 'adidas',
+    gender: 'men',
     description: 'Siêu phẩm giày thể thao Ultraboost tới từ châu âu',
     categories: ['men', 'running'],
     images: [
-        "http://localhost:3000/assets/imgs/slide1.jpg",
-        "http://localhost:3000/assets/imgs/slide2.jpg",
-        "http://localhost:3000/assets/imgs/slide3.jpg",
-        "http://localhost:3000/assets/imgs/slide4.jpg",
+        {
+            public_id: 'faifdfjaidfjaifjadofi',
+            url: 'http://localhost:3000/assets/imgs/slide1.jpg'
+        },
+        {
+            public_id: 'faexetferaererereafdofi',
+            url: 'http://localhost:3000/assets/imgs/slide2.jpg'
+        },
+        {
+            public_id: 'oraoirtjaierjaifjadofi',
+            url: 'http://localhost:3000/assets/imgs/slide3.jpg'
+        },
+        {
+            public_id: 'aidfauiehfjaifjadofi',
+            url: 'http://localhost:3000/assets/imgs/slide4.jpg'
+        },
+
     ],
     variants: [
         {
             color: 'red',
-            _id: 'dfjafdifjif',
+            sku: 'dfjafdiadff',
             size: 30,
             stock: 10,
             price: 100000,
@@ -228,7 +248,7 @@ const database = {
         },
         {
             color: 'red',
-            _id: 'dfjafdifjif',
+            sku: 'dfjafdifjif',
             size: 29,
             stock: 10,
             price: 100000,
@@ -243,15 +263,16 @@ const database = {
 //     variant[element.color].push(element)
 // }
 
-// detail API
+// detail API 
 // eslint-disable-next-line 
 const productDetail = {
     "_id": "safhjawufhasiufyasfu",
     "name": "Ultraboost Bayonce",
     "slug": "ultraboost-bayounce",
-    "brand": "Adidas",
+    "brand": "adidas",
     "description": "Siêu phẩm giày thể thao Ultraboost tới từ châu âu",
-    "categories": ["men", "running"],
+    "categories": ["running"],
+    "gender": "male",
     "images": [
         "http://localhost:3000/assets/imgs/slide1.jpg",
         "http://localhost:3000/assets/imgs/slide2.jpg",
@@ -261,15 +282,15 @@ const productDetail = {
     "variants": {
         "red": [
             {
-                "_id": "dfjafdasdfif",
-                "size": 29,
+                "sku": "dfjafdasdfif",
+                "size": 34,
                 "stock": 10,
                 "price": 100000,
                 "sale": 50,
             },
             {
-                "_id": "asdfasdf",
-                "size": 29,
+                "sku": "asdfasdf",
+                "size": 35,
                 "stock": 10,
                 "price": 100000,
                 "sale": 50,
@@ -279,15 +300,15 @@ const productDetail = {
         ],
         "blue": [
             {
-                "_id": "dfjsdasdfif",
-                "size": 29,
+                "sku": "dfjsdasdfif",
+                "size": 40,
                 "stock": 10,
                 "price": 100000,
                 "sale": 50,
             },
             {
-                "_id": "asdfasdsdf",
-                "size": 29,
+                "sku": "asdfasdsdf",
+                "size": 41,
                 "stock": 10,
                 "price": 100000,
                 "sale": 50,
@@ -296,3 +317,27 @@ const productDetail = {
     }
 }
 
+
+// filter product
+// eslint-disable-next-line
+const filter = {
+    brand: {
+        nike: true,
+        adidas: true,
+    },
+    gender: {
+        male: true,
+        female: true,
+    },
+    price: {
+        1: true,  // < 1.000.000
+        2: true,  // 1.000.000 - 3.000.000
+        3: false, // over 3.000.000
+    },
+    sale: false,
+}
+
+/* 
+    https://dioshoes.shop/category/running
+    https://dioshoes.shop/all-product
+*/

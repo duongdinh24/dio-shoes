@@ -1,18 +1,24 @@
 import React from 'react';
-import { HomeContainer, NewProduct } from './Home.style';
+import {
+    HomeContainer,
+    ProductArea,
+    Title,
+    ButtonShow,
+} from './Home.style';
 import SlideShow from '../../components/SlideShow';
-import Products from '../../components/Products';
+import ProductList from '../../components/ProductList';
 import { productList } from '../../data';
 const Home = () => {
     return (
         <HomeContainer>
             <SlideShow />
-            <NewProduct>
-                <Products productList={productList} />
-            </NewProduct>
+            <ProductArea>
+                <Title>Giày mới nhất</Title>
+                <ProductList productList={productList} />
+            </ProductArea>
+            <ButtonShow>Xem tất cả</ButtonShow>
         </HomeContainer>
     )
 }
 
 export default Home;
-
