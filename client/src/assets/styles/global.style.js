@@ -1,4 +1,4 @@
-
+import { colors } from './variables';
 import styled from 'styled-components';
 export const Container = styled.div`
 	min-height: 63vh;
@@ -11,17 +11,23 @@ export const Button = styled.button`
 	border: none;
 	transition: all linear 0.5s;
 	&:hover {
-		opacity: 0.7;
+		opacity: 0.7;	
 	}
 `;
 
-export const ButtonA = styled.a`
+export const ButtonLink = styled.a`
 	text-decoration: none;
 	cursor: pointer;
-	transition: all linear 0.25s;
+	transition: all linear 0.1s;
 	display: flex;
     justify-content: center;
     align-items: center;
+	font-size: 1.8rem;
+    color: ${colors.white};
+    background-color: ${colors.dark};
+    font-weight: 600;
+    padding: 5px;
+	text-transform: uppercase;
 	&:hover {
 		opacity: 0.7;
 	}

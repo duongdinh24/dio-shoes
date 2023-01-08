@@ -1,6 +1,6 @@
 
 import styled from "styled-components";
-import { ButtonA } from '../../assets/styles/global.style';
+import { ButtonLink } from '../../assets/styles/global.style';
 import { devices, colors } from '../../assets/styles/variables';
 
 export const Container = styled.div`    
@@ -108,13 +108,9 @@ export const Desc = styled.div`
     margin: 10px 0;
 `;
 
-export const ButtonShow = styled(ButtonA)`
+export const ButtonShow = styled(ButtonLink)`
     width: 100px;
     height: 40px;
-    font-size: 1.8rem;
-    color: ${colors.white};
-    background-color: ${colors.dark};
-    font-weight: 600;
     margin: 10px 0;
 `;
 

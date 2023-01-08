@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
     HeaderContainer,
     TopHeader,
@@ -31,7 +31,23 @@ import ScrollButton from '../../components/ScrollButton';
 const Header = () => {
     const [searchValue, setSearchValue] = useState("");
     const searchRef = useRef();
+    const modalRef = useRef(null);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+    // To add event hide the mobile menu if user click outside
+    const handleClickOutside = (event) => {
+        if (modalRef.current && !modalRef.current.contains(event.target)) {
+            setShowMobileMenu(false);
+            console.log("Header click outside");
+        }
+    };
+    useEffect(() => {
+        document.addEventListener('click', handleClickOutside, true);
+        return () => {
+            document.removeEventListener('click', handleClickOutside, true);
+        };
+    }, []);
+    // end area
     return (
         <HeaderContainer>
             <TopHeader>
@@ -74,7 +90,6 @@ const Header = () => {
                                     <ShoppingBagOutlined sx={{ fontSize: 25 }} />
                                 </Badge>
                             }
-
                         </Cart>
                         <MenuIcon onClick={e => (setShowMobileMenu(!showMobileMenu))}>
                             <Menu sx={{ fontSize: 25 }} />
@@ -84,7 +99,7 @@ const Header = () => {
             </MainHeader>
             {showMobileMenu &&
                 <MenuModal>
-                    <MobileMenu>
+                    <MobileMenu ref={modalRef}>
                         <BtnClose onClick={e => (setShowMobileMenu(!showMobileMenu))}>
                             <Clear sx={{ fontSize: 25 }} />
                         </BtnClose>

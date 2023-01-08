@@ -12,7 +12,7 @@ export const Container = styled(Button)`
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 5;
+    z-index: 2;
     @media ${devices.mobileM} {
         width: 30px;
         height: 30px;

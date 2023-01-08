@@ -26,7 +26,7 @@ const ProductCard = ({ product }) => {
                 <ProductInfo>
                     <Name>{product.name}</Name>
                     <Categories>
-                        {product.categories.map(c => (c + " "))}
+                        {product.brand + " " + product.gender + " " + product.categories.map(c => (c + " "))}
                     </Categories>
                     <Colors>{product.colors > 1 ? `${product.colors} colours` : `${product.colors} colour`}</Colors>
                     <Price>
@@ -42,16 +42,17 @@ const ProductCard = ({ product }) => {
 
 ProductCard.propTypes = {
     product: PropTypes.exact({
-        id: PropTypes.string,
+        _id: PropTypes.string,
         name: PropTypes.string,
         slug: PropTypes.string,
         brand: PropTypes.string,
+        gender: PropTypes.string,
         categories: PropTypes.arrayOf(PropTypes.string),
         colors: PropTypes.number,
         thumbnail: PropTypes.string,
         price: PropTypes.number,
         sale: PropTypes.number,
-    })
+    }),
 }
 export default ProductCard;
 

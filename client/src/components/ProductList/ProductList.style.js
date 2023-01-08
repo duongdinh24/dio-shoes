@@ -10,4 +10,6 @@ export const Container = styled.div`
    flex-wrap: wrap;  
    position: relative;
    margin: 20px auto;
+   box-sizing: border-box;
+	transition: all linear 0.3s;
 `
