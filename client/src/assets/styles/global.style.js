@@ -1,7 +1,8 @@
 import { colors } from './variables';
 import styled from 'styled-components';
 export const Container = styled.div`
-	min-height: 63vh;
+	/* min-height: 63vh; */
+	min-height: calc(100vh - 324px);
 	max-width: 1200px;
 	width: 100%;
 	margin: 0 auto;

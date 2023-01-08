@@ -5,7 +5,7 @@ import { colors, devices } from '../../assets/styles/variables';
 export const FilterContainer = styled.div`
     margin-top: 20px;
     width: 25%;
-    height: 75vh;
+    height: 85vh;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -18,6 +18,7 @@ export const FilterContainer = styled.div`
     }   
     ::-webkit-scrollbar {
         width: 5px;
+        height: 5px;
     }
     ::-webkit-scrollbar-track {
         background: #f1f1f1;
@@ -73,5 +74,4 @@ export const CheckboxGroup = styled.div`
 export const Label = styled.label`
     font-size: 1.6rem;
     line-height: 24px;
-    
 `;
