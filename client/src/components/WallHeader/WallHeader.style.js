@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 // import { Container } from '../../assets/styles/global.style';
-import { devices } from '../../assets/styles/variables';
+import { devices, colors } from '../../assets/styles/variables';
 
 export const Container = styled.div`
     height: 50px;
     width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: ${colors.white};
     padding: 10px;
     /* @media ${devices.tabletM} {
         padding: 15px;
@@ -15,6 +17,10 @@ export const Container = styled.div`
     @media ${devices.mobileM} {
         padding: 10px;
     } */
+    /* position: fixed;
+    top: 0;
+    z-index: 2;
+    */
 `;
 
 export const Left = styled.div`
@@ -25,10 +31,6 @@ export const Left = styled.div`
 export const Right = styled.div`
     display: flex;
     align-items: center;
-`;
-
-export const SortBy = styled.span`
-   margin-right: 5px;
 `;
 
 export const Name = styled.h4`

@@ -28,4 +28,4 @@ export const ButtonShow = styled(ButtonLink)`
     font-size: 1.6rem;
     border-radius: 20px;
     width: 200px;
-`
+`;

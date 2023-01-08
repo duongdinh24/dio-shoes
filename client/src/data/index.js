@@ -264,8 +264,7 @@ const database = {
 // }
 
 // detail API 
-// eslint-disable-next-line 
-const productDetail = {
+export const productDetail = {
     "_id": "safhjawufhasiufyasfu",
     "name": "Ultraboost Bayonce",
     "slug": "ultraboost-bayounce",
@@ -295,8 +294,6 @@ const productDetail = {
                 "price": 100000,
                 "sale": 50,
             },
-
-
         ],
         "blue": [
             {
@@ -330,14 +327,24 @@ const filter = {
         female: true,
     },
     price: {
-        1: true,  // < 1.000.000
-        2: true,  // 1.000.000 - 3.000.000
-        3: false, // over 3.000.000
+        sale: false,
+        low: true,  // < 1.000.000
+        medium: true,  // 1.000.000 - 3.000.000
+        high: false, // over 3.000.000
     },
-    sale: false,
+
 }
 
-/* 
+/*
     https://dioshoes.shop/category/running
     https://dioshoes.shop/all-product
+
+*/
+
+
+// Mirage Mock api server
+
+/* api list
+     products?brand=adidas+nike+vans&price=sale+low+medium+high
+     GET /products?limit=20&offset=20
 */

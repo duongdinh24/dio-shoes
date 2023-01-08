@@ -5,41 +5,54 @@ import WallHeader from '../../components/WallHeader';
 import {
     ProductsContainer,
     ResultBody,
+    PaginationContainer,
 } from './Products.style';
+import { Pagination } from '@mui/material';
 
 import { productList } from '../../data';
 const Products = () => {
     // eslint-disable-next-line
     const [category, setCategory] = useState("");
+
     // eslint-disable-next-line
     const [sort, setSort] = useState("");
 
-    // For filter product list
+    const [page, setPage] = useState(1);
+    // const limit = 18;
+    // const offset = (page - 1) * limit;
+
+    // init filter product list
     const [filter, setFilter] = useState({
         brand: {
-            nike: false,
             adidas: false,
+            nike: false,
+            vans: false,
+        },
+        price: {
+            sale: false,
+            low: false, // < 1.000.000
+            medium: false,  // 1.000.000 < 3.000.000
+            high: false, // over 3.000.000 
         },
         gender: {
             male: false,
             female: false,
         },
-        price: {
-            1: false, // < 1.000.000
-            2: false,  // 1.000.000 < 3.000.000
-            3: false, // over 3.000.000
-        },
-        sale: false,
     });
 
+    // done
     const setSortBy = (value) => {
         setSort(value);
-        console.log("SORT BY: ", value);
     }
 
+    // done
     const setFilterChange = (value) => {
         setFilter(value);
-        // console.log("FILTER: ", value);
+    }
+
+    const onPageChange = (e, p) => {
+        console.log("PAGE: ", p)
+        setPage(p);
     }
 
     return (
@@ -49,6 +62,13 @@ const Products = () => {
                 <Filter filter={filter} setFilter={setFilterChange} />
                 <ProductList productList={productList} />
             </ResultBody>
+            <PaginationContainer>
+                <Pagination count={10}
+                    page={page}
+                    onChange={onPageChange}
+                    sx={{ '& .MuiPaginationItem-root': { fontSize: 14 } }}
+                />
+            </PaginationContainer>
         </ProductsContainer>
     )
 }
