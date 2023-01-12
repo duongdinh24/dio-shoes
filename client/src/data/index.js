@@ -245,6 +245,7 @@ const database = {
             stock: 10,
             price: 100000,
             sale: 50,
+            img: 'http://localhost:3000/assets/imgs/slide1.jpg',
         },
         {
             color: 'red',
@@ -253,6 +254,7 @@ const database = {
             stock: 10,
             price: 100000,
             sale: 50,
+            img: 'http://localhost:3000/assets/imgs/slide2.jpg',
         },
     ]
 }
@@ -265,50 +267,55 @@ const database = {
 
 // detail API 
 export const productDetail = {
-    "_id": "safhjawufhasiufyasfu",
-    "name": "Ultraboost Bayonce",
-    "slug": "ultraboost-bayounce",
-    "brand": "adidas",
-    "description": "Siêu phẩm giày thể thao Ultraboost tới từ châu âu",
-    "categories": ["running"],
-    "gender": "male",
-    "images": [
+    _id: "safhjawufhasiufyasfu",
+    name: "Ultraboost Bayonce",
+    slug: "ultraboost-bayounce",
+    brand: "adidas",
+    description: "Siêu phẩm giày thể thao Ultraboost tới từ châu âu",
+    categories: ["running"],
+    gender: "male",
+    images: [
         "http://localhost:3000/assets/imgs/slide1.jpg",
         "http://localhost:3000/assets/imgs/slide2.jpg",
         "http://localhost:3000/assets/imgs/slide3.jpg",
         "http://localhost:3000/assets/imgs/slide4.jpg",
     ],
-    "variants": {
-        "red": [
+
+    variants: {
+        red: [
             {
-                "sku": "dfjafdasdfif",
-                "size": 34,
-                "stock": 10,
-                "price": 100000,
-                "sale": 50,
+                sku: "dfjafdasdfif",
+                size: 34,
+                stock: 10,
+                price: 100000,
+                sale: 50,
+                img: "http://localhost:3000/assets/imgs/slide1.jpg",
             },
             {
-                "sku": "asdfasdf",
-                "size": 35,
-                "stock": 10,
-                "price": 100000,
-                "sale": 50,
+                sku: "asdfasdf",
+                size: 35,
+                stock: 10,
+                price: 100000,
+                sale: 50,
+                img: "http://localhost:3000/assets/imgs/slide1.jpg",
             },
         ],
-        "blue": [
+        blue: [
             {
-                "sku": "dfjsdasdfif",
-                "size": 40,
-                "stock": 10,
-                "price": 100000,
-                "sale": 50,
+                sku: "dfasdfif",
+                size: 40,
+                stock: 10,
+                price: 100000,
+                sale: 50,
+                img: "http://localhost:3000/assets/imgs/slide2.jpg",
             },
             {
-                "sku": "asdfasdsdf",
-                "size": 41,
-                "stock": 10,
-                "price": 100000,
-                "sale": 50,
+                sku: "asdsdsdf",
+                size: 41,
+                stock: 10,
+                price: 100000,
+                sale: 50,
+                img: "http://localhost:3000/assets/imgs/slide2.jpg",
             },
         ],
     }
@@ -348,3 +355,6 @@ const filter = {
      products?brand=adidas+nike+vans&price=sale+low+medium+high
      GET /products?limit=20&offset=20
 */
+
+
+// variant https://docs.cs-cart.com/latest/user_guide/manage_products/products/product_variations.html

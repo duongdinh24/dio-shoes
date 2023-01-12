@@ -53,7 +53,7 @@ export const SubTitle = styled.span`
     line-height: 26px;
     display: block;
     font-size: 2rem;
-    margin: 20px 0 10px 0;
+    margin-bottom: 10px
 `;
 
 export const ProductInfo = styled.div`
@@ -70,7 +70,7 @@ export const ProductInfo = styled.div`
 export const Name = styled.h3`
     font-weight: 450;
     font-size: 2.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
     text-transform: capitalize;
     line-height: 40px;
     @media ${devices.tabletM} {
@@ -94,29 +94,72 @@ export const Info = styled.span`
 `;
 
 export const ColorContainer = styled.div`
+    box-sizing: border-box;
     width: 100%;
-    height: 80px;
+    height: 120px;
+    margin-bottom: 20px;
 `;
 
 export const ColorList = styled.div`
-
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 80%;
 `;
 
-export const ColorItem = styled.button`
-
+export const ColorItem = styled.div`
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    position: relative;
+    background-color: #EBEFF2;
+    border: ${props => (props.isSelect ? "1px solid red" : "none")};
+    button {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        z-index: 1;
+    }
+    label {
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
 `;
 
 export const SizeContainer = styled.div`
+    box-sizing: border-box;
     width: 100%;
-    height: 80px;
+    margin-bottom: 20px;
+    height:auto;
 `;
 
 export const SizeList = styled.div`
-
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
 `;
 
 export const SizeItem = styled.button`
-
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: ${colors.lightgray};
+    margin-right: 15px;
+    border-radius: 50%;
+    border: ${props => (props.isSelect ? "1px solid red" : "1px solid #9b9b9b")};
 `;
 
 export const ProductAction = styled.div`
@@ -139,13 +182,12 @@ export const Quantity = styled.div`
 `;
 
 export const AddToCard = styled.button`
-    /* background-color: ${colors.red}; */
+    background-color: ${colors.red};
     font-size: 1.6rem;
     width: 180px;
     height: 50px;
     color: ${colors.white};
     border: none;
     font-weight: 500;
-    background-image: url (${props => props.background});
 `;
 

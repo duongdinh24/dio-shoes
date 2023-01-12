@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductSlider from '../../components/ProductSlider';
 import ProductList from '../../components/ProductList';
 import { formatCash } from '../../utils';
@@ -16,19 +16,33 @@ import {
     Price,
     Info,
     ColorContainer,
+    ColorList,
+    ColorItem,
     SizeContainer,
+    SizeList,
+    SizeItem,
     ProductAction,
     QuantityContainer,
     Quantity,
     AddToCard,
     SubTitle,
-    ColorList,
+
 } from './Product.style';
 
 const Product = () => {
 
-    const handleSizeClick = (e) => {
-        console.log("SIZE: ", e.value);
+    const [color, setColor] = useState(null);
+    const [size, setSize] = useState(0);
+    // const [variantSelect, setVariantSelect] = useState(null);
+    const handelSelectColor = (e) => {
+        e.preventDefault();
+        setColor(e.target.value);
+        setSize(0);
+    }
+
+    const handleSelectSize = (e) => {
+        e.preventDefault();
+        setSize(parseInt(e.target.value));
     }
 
     return (
@@ -39,18 +53,41 @@ const Product = () => {
                     <ProductSlider images={productDetail.images} />
                 </Slider>
                 <ProductInfo>
-                    <Name>{productDetail.name + " " + productDetail.gender}</Name>
+                    <Name>{productDetail.name}</Name>
                     <Price>{formatCash("890000") + " VND"}</Price>
                     <Info>
-                        {productDetail.brand + " " + productDetail.categories.map(c => (" " + c))}
+                        {productDetail.brand + " " + productDetail.gender + " " + productDetail.categories.map(c => (" " + c))}
                     </Info>
-                    <SubTitle>Màu sắc</SubTitle>
                     <ColorContainer>
-
+                        <SubTitle>Màu sắc</SubTitle>
+                        <ColorList>
+                            {Object.keys(productDetail.variants).map(key => (
+                                <ColorItem key={key} isSelect={color === key ? true : false}>
+                                    <button value={key} onClick={handelSelectColor} />
+                                    <label>
+                                        <img src={productDetail.variants[key][0].img} alt={key} />
+                                    </label>
+                                </ColorItem>
+                            ))}
+                        </ColorList>
                     </ColorContainer>
-                    <SubTitle>Size</SubTitle>
                     <SizeContainer>
-
+                        <SubTitle>Size</SubTitle>
+                        {(color !== null) &&
+                            <SizeList >
+                                {productDetail.variants[color].map(item => (
+                                    <SizeItem
+                                        value={item.size}
+                                        key={item.sku}
+                                        isSelect={size === item.size ? true : false}
+                                        isDisable={item.stock ? true : false}
+                                        onClick={handleSelectSize}
+                                    >
+                                        {item.size}
+                                    </SizeItem>)
+                                )}
+                            </SizeList>
+                        }
                     </SizeContainer>
                     <SubTitle>Số lượng</SubTitle>
                     <ProductAction>
@@ -63,13 +100,12 @@ const Product = () => {
                 </ProductInfo>
             </InforContainer>
             <ProductDesc>
-
             </ProductDesc>
             <ProductArea>
                 <Title>sản phẩm liên quan</Title>
                 <ProductList productList={productList} />
             </ProductArea>
-        </ProductContainer>
+        </ProductContainer >
     )
 }
 
