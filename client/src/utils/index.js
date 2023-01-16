@@ -6,11 +6,11 @@ function formatCash(str) {
 }
 
 /**
- * @param {string}  ex: 100000
- * @returns {new string + VND} ex: 100,000 VND
+ * @param {num}  ex: 100000
+ * @returns {string + VND} ex: 100,000 VND
  */
-function formatToVND(str) {
-    return str.toLocaleString('it-IT', { style: 'currency', currency: 'VND' });
+function formatToVND(num) {
+    return num.toLocaleString('it-IT', { style: 'currency', currency: 'VND' });
 }
 
 export { formatToVND, formatCash };

@@ -271,7 +271,7 @@ export const productDetail = {
     name: "Ultraboost Bayonce",
     slug: "ultraboost-bayounce",
     brand: "adidas",
-    description: "Siêu phẩm giày thể thao Ultraboost tới từ châu âu",
+    description: "Siêu phẩm giày thể thao Ultraboost tới từ châu âu Let the Nike Pegasus 39 help you ascend to new heights. More lightweight up top than the Pegasus 38 and ideal to wear in any season, it has a supportive sensation to help keep your feet contained, while underfoot cushioning and double Zoom Air units (1 more than the Peg 38) give you an extra pop to your step. Your trusted workhorse with wings is back. Time to fly",
     categories: ["running"],
     gender: "male",
     images: [
@@ -280,36 +280,40 @@ export const productDetail = {
         "http://localhost:3000/assets/imgs/slide3.jpg",
         "http://localhost:3000/assets/imgs/slide4.jpg",
     ],
-
+    minPrice: 100000,
     variants: {
         red: [
             {
                 sku: "dfjafdasdfif",
+                color: 'red',
                 size: 34,
                 stock: 10,
                 price: 100000,
-                sale: 50,
+                sale: 0,
                 img: "http://localhost:3000/assets/imgs/slide1.jpg",
             },
             {
+                color: 'red',
                 sku: "asdfasdf",
                 size: 35,
-                stock: 10,
+                stock: 1,
                 price: 100000,
-                sale: 50,
+                sale: 20,
                 img: "http://localhost:3000/assets/imgs/slide1.jpg",
             },
         ],
         blue: [
             {
+                color: 'blue',
                 sku: "dfasdfif",
                 size: 40,
-                stock: 10,
+                stock: 0,
                 price: 100000,
                 sale: 50,
                 img: "http://localhost:3000/assets/imgs/slide2.jpg",
             },
             {
+                color: 'blue',
                 sku: "asdsdsdf",
                 size: 41,
                 stock: 10,

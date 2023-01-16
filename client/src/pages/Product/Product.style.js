@@ -8,11 +8,11 @@ export const ProductContainer = styled(Container)`
 
 export const InforContainer = styled.div`
     width: 100%;
-    height: 600px;
+    height: 700px;
     display: flex;
     @media ${devices.tabletM} {
         flex-direction: column;
-        height: 80vh;
+        height: 1400px;
     }
 `;
 
@@ -27,15 +27,9 @@ export const Slider = styled.div`
     }
 `;
 
-export const ProductDesc = styled.div`
-    width: 100%;
-    height: 400px;
-    background-color: teal;
-`;
-
 export const ProductArea = styled.div`
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -78,11 +72,29 @@ export const Name = styled.h3`
     }
 `;
 
-export const Price = styled.span`
+export const Price = styled.div`
     font-size: 2.0rem;
-    color: ${colors.red};
     font-weight: 500;
     margin-bottom: 30px;
+`;
+
+export const CurentPrice = styled.span`
+    color: ${colors.red};
+`;
+
+export const OldPrice = styled.span`
+    color: ${colors.gray};
+    margin-left: 8px;
+    font-style: italic;
+    text-decoration: line-through;
+    font-size: 2.0rem;
+`;
+
+export const Sale = styled.span`
+    font-size: 1.8rem;
+    color: ${colors.green}; 
+    font-weight: 400;
+    margin-left: 20px;
 `;
 
 export const Info = styled.span`
@@ -156,32 +168,65 @@ export const SizeItem = styled.button`
     width: 40px;
     height: 40px;
     cursor: pointer;
-    background-color: ${colors.lightgray};
+    background-color: ${props => (props.disabled ? "" : colors.lightgray)};
     margin-right: 15px;
     border-radius: 50%;
     border: ${props => (props.isSelect ? "1px solid red" : "1px solid #9b9b9b")};
+    transition: all 0.5s ease;
+    &:disabled {
+        cursor: default;
+    }
 `;
 
 export const ProductAction = styled.div`
     display: flex;
     justify-content: space-around;
-    height: 80px;
+    height: 100px;
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    @media ${devices.tabletM} {
+        flex-direction: column;
+        height: 220px;
+    }
 `;
-
 
 export const QuantityContainer = styled.div`
     width: 50%;
     height: 100%;
 `;
 
-
 export const Quantity = styled.div`
-
+    height: 40px;
+    width: 150px;
+    margin-top: 20px;
+    font-size: 2.0rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    button {
+        width: 50px;
+        height: 100%;
+        cursor: pointer;
+        &:focus {
+            outline: none;
+        }
+        &:disabled {
+            cursor: default;
+        }
+    }
+    span {
+        text-align: center;
+        display: block;
+        width: 50px;
+        height: 100%;
+        line-height: 40px;
+    }
 `;
 
 export const AddToCard = styled.button`
+    cursor: pointer;
     background-color: ${colors.red};
     font-size: 1.6rem;
     width: 180px;
@@ -189,5 +234,31 @@ export const AddToCard = styled.button`
     color: ${colors.white};
     border: none;
     font-weight: 500;
+    margin-top: 40px;
+    transition: all 0.2s ease;
+    @media ${devices.tabletM} {
+        height: 80px;
+        margin: auto;
+    }
+    &:hover {
+        opacity: 0.8;
+    }
+    &:disabled {
+        cursor: default;
+        background-color: ${colors.gray};
+    }
 `;
 
+export const ProductDesc = styled.div`
+    border-top: 1px solid #cccc;
+    width: 100%;
+    min-height: 200px;
+    p {
+        padding: 15px;
+        font-size: 1.6rem;
+        line-height: 28px;
+        &:first-letter {
+            padding-left: 20px;
+        }
+    }
+`;
