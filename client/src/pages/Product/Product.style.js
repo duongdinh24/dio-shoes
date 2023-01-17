@@ -243,10 +243,6 @@ export const AddToCard = styled.button`
     &:hover {
         opacity: 0.8;
     }
-    &:disabled {
-        cursor: default;
-        background-color: ${colors.gray};
-    }
 `;
 
 export const ProductDesc = styled.div`

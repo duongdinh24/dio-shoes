@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ProductSlider from '../../components/ProductSlider';
 import ProductList from '../../components/ProductList';
 import { formatToVND } from '../../utils';
@@ -36,14 +38,15 @@ const Product = () => {
 
     const [color, setColor] = useState(null);
     const [size, setSize] = useState(0);
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
     // eslint-disable-next-line
-    const [variant, setVariant] = useState({});
+    const [variant, setVariant] = useState(null);
     const handelSelectColor = (e) => {
         e.preventDefault();
         setColor(e.target.value);
-        setQuantity(0);
+        setQuantity(1);
         setSize(0);
+        setVariant(null);
     }
 
     const handleSelectSize = (e) => {
@@ -56,7 +59,7 @@ const Product = () => {
             }
         })
         setVariant(detail);
-        setQuantity(0);
+        setQuantity(1);
     }
 
     const handleQuantity = (e) => {
@@ -69,18 +72,53 @@ const Product = () => {
         }
     }
 
+    // handdle add tocard click
     const addToCard = (e) => {
         e.preventDefault();
-        const cardItem = {
-            product: {
-                ...productDetail,
-            },
-            itemSelected: {
-                ...variant,
-            },
-            quantity: quantity,
+        if (color == null) {
+            toast.error('Vui lòng chọn màu sắc', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
-        console.log("ADD: ", cardItem);
+        else if (size === 0) {
+            toast.error('Vui lòng chọn size giày', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
+        else {
+            const cardItem = {
+                product: {
+                    ...productDetail,
+                },
+                variant,
+                quantity: quantity,
+            }
+            console.log("ADD: ", cardItem);
+            toast.success('Đã thêm vào giỏ hàng', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
+        }
     }
 
     return (
@@ -107,9 +145,7 @@ const Product = () => {
                         ) : (
                             <CurentPrice>{formatToVND(productDetail.minPrice)}</CurentPrice>
                         )
-
                         }
-
                     </Price>
                     <Info>
                         {productDetail.brand + " " + productDetail.gender + " " + productDetail.categories.map(c => (" " + c))}
@@ -158,12 +194,11 @@ const Product = () => {
                                 <button
                                     value={'decrease'}
                                     onClick={handleQuantity}
-                                    disabled={quantity === 0 ? true : false}
+                                    disabled={quantity === 1 ? true : false}
                                 >-</button>
                             </Quantity>
                         </QuantityContainer>
                         <AddToCard
-                            disabled={quantity === 0 ? true : false}
                             onClick={addToCard}
                         >
                             THÊM VÀO GIỎ HÀNG
@@ -179,6 +214,19 @@ const Product = () => {
                 <Title>sản phẩm liên quan</Title>
                 <ProductList productList={productList} />
             </ProductArea>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light"
+            >
+            </ToastContainer>
         </ProductContainer >
     )
 }
