@@ -56,62 +56,6 @@ export const slides = [
 // ]
 // Product.createIndexes({ "specs.k": 1, "specs.v": 1 });
 
-// product unuse
-// export const product = {
-//     name: 'Ultraboost Bayonce',
-//     slug: 'ultraboost-bayounce',
-//     brand: 'Adidas',
-//     description: 'Siêu phẩm giày thể thao Ultraboost tới từ châu âu',
-//     categories: ['men', 'running'],
-//     images: [
-//         "http://localhost:3000/assets/imgs/slide1.jpg",
-//         "http://localhost:3000/assets/imgs/slide2.jpg",
-//         "http://localhost:3000/assets/imgs/slide3.jpg",
-//         "http://localhost:3000/assets/imgs/slide4.jpg",
-//     ],
-//     options: [
-//         {
-//             color: 'red',
-//             sizes: [
-//                 {
-//                     _id: 'dfjafdifjif',
-//                     size: 30,
-//                     stock: 10,
-//                     price: 100000,
-//                     sale: 50,
-//                 },
-//                 {
-//                     _id: 'dfjafdifsdff',
-//                     size: 35,
-//                     stock: 10,
-//                     price: 100000,
-//                     sale: 50,
-//                 }
-//             ]
-//         },
-//         {
-//             color: 'blue',
-//             sizes: [
-//                 {
-//                     _id: 'sfiaiweuuf',
-//                     size: 30,
-//                     stock: 10,
-//                     price: 100000,
-//                     sale: 50,
-//                 },
-//                 {
-//                     _id: 'adfeef',
-//                     size: 35,
-//                     stock: 10,
-//                     price: 100000,
-//                     sale: 50,
-//                 }
-//             ]
-//         },
-//     ],
-
-// }
-
 export const productList = [
     {
         _id: 'sjfISWIJFASIFJOAeiu',
@@ -188,24 +132,6 @@ export const productList = [
         sale: 0,
     },
 ]
-
-// product on database
-// export const products = [
-//     {
-//         id: 'afaeueruadfafuawe8fh',
-//         code: 'ADIDAS-001',
-//         name: 'Ultraboost Bayonce',
-//         brand: 'Adidas',
-//         description: 'Siêu phẩm giày thể thao Ultraboost tới từ châu âu',
-//         sale: 50,
-//         price: 100000,
-//         categories: ['men', 'running'],
-//         size: 10,
-//         color: 'red',
-//         stock: 10,
-//     },
-// ]
-
 
 ///     detail   list   database 
 
@@ -352,7 +278,6 @@ const filter = {
 
 */
 
-
 // Mirage Mock api server
 
 /* api list
@@ -362,3 +287,46 @@ const filter = {
 
 
 // variant https://docs.cs-cart.com/latest/user_guide/manage_products/products/product_variations.html
+
+export const cartItems = [
+    {
+        product: {
+            _id: "safhjawufhasiufyasfu",
+            name: "Ultraboost Bayonce",
+            slug: "ultraboost-bayounce",
+            brand: "adidas",
+            categories: ["running"],
+            gender: "male",
+        },
+        variant: {
+            sku: "dfjafdasdfif",
+            color: 'red',
+            size: 34,
+            stock: 10,
+            price: 1000000,
+            sale: 0,
+            img: "http://localhost:3000/assets/imgs/slide1.jpg",
+        },
+        quantity: 4,
+    },
+    {
+        product: {
+            _id: "safhjawufhasiufyasfu",
+            name: "Ultraboost Bayonce",
+            slug: "ultraboost-bayounce",
+            brand: "adidas",
+            categories: ["running"],
+            gender: "male",
+        },
+        variant: {
+            color: 'blue',
+            sku: "asdsdsdf",
+            size: 41,
+            stock: 3,
+            price: 100000,
+            sale: 50,
+            img: "http://localhost:3000/assets/imgs/slide2.jpg",
+        },
+        quantity: 2,
+    }
+]

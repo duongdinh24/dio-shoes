@@ -20,12 +20,13 @@ export const Container = styled.div`
 `;
 
 // export const Card = styled(Link)` 
-export const Card = styled.div` 
+export const Card = styled.a`
+    display: block;
     width: 100%;
     height: 100%;
     cursor: pointer;
     transition: all .1s ease-in-out; 
-    :hover {
+        :hover {
         transform: scale(1.02);
     }
 `;
