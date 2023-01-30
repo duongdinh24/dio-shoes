@@ -50,7 +50,6 @@ const Product = () => {
     }
 
     const handleSelectSize = (e) => {
-        e.preventDefault();
         setSize(parseInt(e.target.value));
         let detail;
         productDetail.variants[color].forEach(v => {
@@ -63,7 +62,6 @@ const Product = () => {
     }
 
     const handleQuantity = (e) => {
-        e.preventDefault();
         if (e.target.value === 'increase') {
             setQuantity(quantity + 1);
         }
@@ -74,7 +72,6 @@ const Product = () => {
 
     // handdle add tocard click
     const addToCard = (e) => {
-        e.preventDefault();
         if (color == null) {
             toast.error('Vui lòng chọn màu sắc', {
                 position: "top-right",
@@ -102,7 +99,13 @@ const Product = () => {
         else {
             const cardItem = {
                 product: {
-                    ...productDetail,
+                    _id: productDetail._id,
+                    name: productDetail.name,
+                    slug: productDetail.slug,
+                    brand: productDetail.brand,
+                    gender: productDetail.gender,
+                    categories: productDetail.categories,
+                    // ... productDetail
                 },
                 variant,
                 quantity: quantity,
@@ -157,6 +160,7 @@ const Product = () => {
                                 <ColorItem key={v} isSelect={color === v ? true : false}>
                                     <button value={v} onClick={handelSelectColor} />
                                     <label>
+                                        {/* using image of first variant */}
                                         <img src={productDetail.variants[v][0].img} alt={v} />
                                     </label>
                                 </ColorItem>
